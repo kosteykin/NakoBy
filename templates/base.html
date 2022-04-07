@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="NaKo Blog">
+    <meta name="author" content="NaKo">
+    <!-- Open Sans Font -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="icon" href="{% static 'favicon.ico' %}">
+
+    <!-- Bootstrap Css -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+
+    <!-- Main Css -->
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+    <title> {% block title %}Главная{% endblock %} - Nako</title>
+</head>
+
+<body>
+
+{# HEADER BEGIN #}
+<header class="p-3 bg-dark text-white">
+    <div class="container">
+
+        <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+
+            <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+                <li><a href="/" class="nav-link px-2 text-secondary">Главная</a></li>
+                <li><a href="/news/" class="nav-link px-2 text-white">Новости</a></li>
+                <li><a href="#" class="nav-link px-2 text-white">Контакты</a></li>
+
+            </ul>
+
+            <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
+                <input type="search" class="form-control form-control-dark" placeholder="Поиск..." aria-label="Search">
+            </form>
+
+            <div class="text-end">
+                <button type="button" class="btn btn-outline-light me-2">Войти</button>
+                <button type="button" class="btn btn-warning">Регистрация</button>
+                <a href="/admin">
+                    <button type="button" class="btn btn-warning">Admin Panel</button>
+                </a>
+            </div>
+
+        </div>
+
+    </div>
+</header>
+{# HEADER END #}
+
+<main class="container">
+{% block content %}
+
+
+        <div class="p-4 p-md-5 mb-4 text-white rounded bg-dark">
+            <div class="col-md-6 px-0">
+                <h1 class="display-4 fst-italic">Заголовок интересного поста про прекрасное будущее</h1>
+                <p class="lead my-3">Очень интересный текст бла бла бла бла</p>
+                <p class="lead mb-0"><a href="#" class="text-white fw-bold">Читать далее...</a></p>
+            </div>
+        </div>
+
+        <div class="row mb-2">
+            <div class="col-md-6">
+                <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                    <div class="col p-4 d-flex flex-column position-static">
+                        <strong class="d-inline-block mb-2 text-primary">Мир</strong>
+                        <h3 class="mb-0">Featured post</h3>
+                        <div class="mb-1 text-muted">Март 12</div>
+                        <p class="card-text mb-auto">This is a wider card with supporting text below as a natural
+                            lead-in to additional content.</p>
+                        <a href="#" class="stretched-link">Continue reading</a>
+                    </div>
+                    <div class="col-auto d-none d-lg-block">
+                        <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg"
+                             role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice"
+                             focusable="false"><title>Placeholder</title>
+                            <rect width="100%" height="100%" fill="#55595c"/>
+                            <text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text>
+                        </svg>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                    <div class="col p-4 d-flex flex-column position-static">
+                        <strong class="d-inline-block mb-2 text-success">IT</strong>
+                        <h3 class="mb-0">Post title</h3>
+                        <div class="mb-1 text-muted">Март 11</div>
+                        <p class="mb-auto">This is a wider card with supporting text below as a natural lead-in to
+                            additional content.</p>
+                        <a href="#" class="stretched-link">Continue reading</a>
+                    </div>
+                    <div class="col-auto d-none d-lg-block">
+                        <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg"
+                             role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice"
+                             focusable="false"><title>Placeholder</title>
+                            <rect width="100%" height="100%" fill="#55595c"/>
+                            <text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text>
+                        </svg>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        КОНТЕНТ ЗДЕСЬ
+
+
+
+{% endblock %}
+</main>
+
+{# FOOTER BEGIN #}
+<div class="container">
+    <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+        <p class="col-md-4 mb-0 text-muted">NakoBy &copy {% now 'Y' %}</p>
+
+        <ul class="nav col-md-4 justify-content-end">
+            <li class="nav-item"><a href="/" class="nav-link px-2 text-muted">Главная</a></li>
+            <li class="nav-item"><a href="/news/" class="nav-link px-2 text-muted">Новости</a></li>
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Контакты</a></li>
+        </ul>
+    </footer>
+</div>
+
+{# FOOTER END #}
+</body>
+
+<script src="{% static 'js/bootstrap.js' %}"></script>
+
+</html>
