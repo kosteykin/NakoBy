@@ -11,8 +11,10 @@ class Post(models.Model):
     post_full_description = models.TextField(verbose_name="Описание", max_length=5000)
     post_author = models.CharField(verbose_name="Автор", max_length=20)
     post_publication_date = models.DateTimeField(verbose_name="Дата публикации", default=timezone.now)
+    post_category = models.CharField(verbose_name="Категория", default="", max_length=50, blank=True)
     post_slug = models.SlugField(default="", unique=True, editable=False, max_length=100)
     post_is_active = models.BooleanField(verbose_name="Активно", default=True)
+    post_is_featured = models.BooleanField(verbose_name="Избранное", default=False)
 
     class Meta:
         verbose_name = "Пост"
